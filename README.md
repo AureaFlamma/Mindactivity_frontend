@@ -1,10 +1,4 @@
-
-
-https://user-images.githubusercontent.com/101634716/186657273-8234ae24-8a03-414f-8cf4-90e354493ec8.mp4
-
-
-
-
+![image](https://user-images.githubusercontent.com/101634716/186671030-b94025e6-1001-421a-8f7a-6398cbdbc063.png)
 
 <br/>
 
@@ -12,17 +6,14 @@ https://user-images.githubusercontent.com/101634716/186657273-8234ae24-8a03-414f
 
 <br />
 
-
 ## List of Contents
-1. [Introduction](#mindactivity-app-for-managing-stress)
+1. [Introduction and demo](#mindactivity-app-for-managing-stress)
 2. [Features](#features)
 3. [Getting Started](#getting-started)
 4. [Tech Stack](#tech-stack)
-5. [Color Reference](#color-reference)
-6. [Running Tests](#running-tests)
-7. [Authors](#authors)
-8. [Appendix](#appendix)
-
+5. [Running Tests](#running-tests)
+6. [Authors](#authors)
+7. [Appendix](#appendix)
 
 <br/>
 
@@ -35,12 +26,21 @@ https://user-images.githubusercontent.com/101634716/186657273-8234ae24-8a03-414f
 Welcome to Mindactivity!
 
 
-Just in case you were curious about the name, mindfulness + productivity = mindactivity.
+Mindactivity (Mindfulness + Activity) is a meditative media app which allows users to time their meditation and deep work sessions. Here's a little demo of the app:
 
 
-It's a Mindfullness App designed to manage stress levels and increase productivity using meditative media.
+https://user-images.githubusercontent.com/101634716/186674458-62721b43-b845-42d6-8f6b-a83c6a662e37.mp4
 
-**This documentation is for the entire Mindactivity app. If you're interested in the backend/API specifically, go to [backend repository](https://github.com/SchoolOfCode/w9_backend-project-mindactivity)**
+
+<br/>
+
+*This documentation is for the entire Mindactivity app. If you're interested in the backend/API specifically, go to [my fork of the backend repository](https://github.com/AureaFlamma/Mindactivity_backend.git)*
+
+<br/>
+
+*This is a fork of the Mindactivity frontend repo. Original repos can be found here: [frontend](https://github.com/SchoolOfCode/w9_frontend-project-mindactivity.git) & [backend](https://github.com/SchoolOfCode/w9_backend-project-mindactivity). All links from this point onward point to the original repos.*
+
+
 
 
 <br/>
@@ -69,11 +69,12 @@ It's a Mindfullness App designed to manage stress levels and increase productivi
 ### **Backend** ###
 
 **It is important to get the backend working before you run the frontend in order to use the affirmations and the blog post features*
-1. Git clone the backend repository.
+1. Fork the original backend repository. You can find it [here](https://github.com/SchoolOfCode/w9_backend-project-mindactivity).
+2. Clone the forked repo to your computer. Unless you renamed the repo whilst forking, the command is (insert your GitHub username where indicated): 
 ```bash
-  git clone https://github.com/SchoolOfCode/w9_backend-project-mindactivity
+  git clone https://github.com/<YOUR_GITHUB_USERNAME>/w9_backend-project-mindactivity
 ```
-2. Install all the dependencies by running this command:
+3. Install all the dependencies:
 ```bash
   npm i
 ```
@@ -81,32 +82,41 @@ It's a Mindfullness App designed to manage stress levels and increase productivi
 ```bash
  DATABASE_URL = <Database URL goes here>
 ```
-4. Create the table in your database by running this script in the terminal:
+4. Create the affirmations table in your database by running this script in the terminal:
 ```bash
-npm run db:createTable
+npm run db:createAffirmationsTable
 ```
-5. Populate the table you have just created by running this script in the terminal:
+5. Populate the affrimations table you have just created with data from "/lib/affirmationData.js" by running this script in the terminal:
 ```
-npm run db:populateTable
+npm run db:populateAffirmationsTable
 ```
-6. Run the server with this command in the terminal:
+6. Now, repeat the last 2 steps for blog table. First create it...:
+```bash
+npm run db:createBlogTable
+```
+7. ...then populate it with data from "/lib/blogs.js":
+```bash
+db:populateBlogTable
+```
+8. Finally, run the server:
 ```bash
   npm run dev
 ```
 
 ### **Frontend** ###
 
-1. Git clone the frontend repository.
+1. For the original frontend repo. You can find it [here](https://github.com/SchoolOfCode/w9_backend-project-mindactivity)
+2. Unless you have renamed the repo when you forked it, you can clone it with this command (insert your GitHub username where indicated)
 ```bash
-  git clone https://github.com/SchoolOfCode/w9_backend-project-mindactivity
+  git clone https://github.com/<YOUR_GITHUB_USERNAME>/w9_backend-project-mindactivity
 ```
-2. Install the dependencies by running this command in the terminal.  
+3. Install the dependencies by running this command in the terminal.  
 ```bash
   npm i
 ```
-3. Navigate to this folder w9_frontend-project-mindactivity/Mindactivity
+4. Navigate to this folder: *w9_frontend-project-mindactivity/Mindactivity*
 
-4. Start the app.
+5. Start the app.
 ```bash
   npm start
 ```
@@ -128,25 +138,6 @@ npm run db:populateTable
 **Client-side Testing:** React Testing Library
 </br>
 **Server-side Testing:** Supertest, Jest
-
-<br/>
-
----
-
-<br />
-
-
-## ***Color Reference🎨***
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Xiketic | ![#131224](https://via.placeholder.com/10/131224?text=+) #131224 |
-| Oxford Blue | ![#F8F8F8](https://via.placeholder.com/10/0C1445?text=+) #0C1445 |
-| Liberty | ![#00B48A](https://via.placeholder.com/10/5C54A4?text=+) #5C54A4 |
-| Rhythm | ![#00D1A0](https://via.placeholder.com/10/8380A4?text=+) #8380A4 |
-| Melon | ![#00D1A0](https://via.placeholder.com/10/FFB7A2E8?text=+) #FFB7A2E8 |
-| Puce | ![#C3809A](https://via.placeholder.com/10/C3809A?text=+) #C3809A |
-| Sandy Brown | ![#FBA55A](https://via.placeholder.com/10/FBA55A?text=+) #FBA55A |
-
 
 <br/>
 
